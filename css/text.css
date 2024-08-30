@@ -1,0 +1,111 @@
+.text {
+    margin: 0 auto;
+    width: 100px; 
+}
+
+.text img {
+    position: absolute;
+    top: 10vh;
+    left: 80vh;
+    z-index: 0;
+    overflow: hidden;
+    animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spreadhead-effect {
+    position: absolute; /* 绝对定位使得元素相对于其最近的已定位祖先元素进行定位 */
+    left: 10vh;
+    color: white;
+    background: transparent;
+    text-shadow:
+        -1px -1px 1px rgba(0, 0, 0, 0.5),
+        1px 1px 1px rgba(0, 0, 0, 0.5),
+        2px 2px 2px rgba(0, 0, 0, 0.5),
+        3px 3px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'SpreadHeadFont';
+    font-size: 150px;
+    padding: 5px; /* 内边距 */
+    z-index: 1;
+    white-space: nowrap; /* 防止文本换行 */
+}
+.subhead-effect {
+    position: relative;
+    top: 200px;
+    left: -500px;
+    transform: translateX(-100%);
+    color: white;
+    background: transparent;
+    text-shadow:
+        -1px -1px 1px rgba(0, 0, 0, 0.5),
+        1px 1px 1px rgba(0, 0, 0, 0.5),
+        2px 2px 2px rgba(0, 0, 0, 0.5),
+        3px 3px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'SubHeadFont';
+    font-size: 50px;
+    z-index: 1;
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+.head-hover-effect {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.head-hover-effect:hover {
+    text-decoration: underline white 3px;
+    animation: highlight 0.5s ease forwards; /* 动画效果 */
+}
+
+.text-effect {
+    position: relative;
+    top: 200px;
+    left: -500px;
+    transform: translateX(-100%);
+    color: white;
+    background: transparent;
+    text-shadow:
+        -1px -1px 1px rgba(0, 0, 0, 0.5),
+        1px 1px 1px rgba(0, 0, 0, 0.5),
+        2px 2px 2px rgba(0, 0, 0, 0.5),
+        3px 3px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'TextFont';
+    font-size: 40px;
+    white-space: nowrap;
+}
+
+@keyframes highlight {
+    0%, 100% {
+      background-size: 0 0;
+      opacity: 0.5;
+    }
+    50% {
+      background-size: 200% 200%;
+      opacity: 1;
+    }
+  }
+
+@font-face {
+    font-family: 'SpreadHeadFont';
+    src: url('../other_dependency/YouSheBiaoTiHei.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SubHeadFont';
+    src: url('../other_dependency/SrcMingItal-VF.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TextFont';
+    src: url('../other_dependency/SmileySans-Oblique-2.ttf');
+    font-weight: normal;
+    font-style: normal;
+}

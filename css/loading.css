@@ -1,0 +1,64 @@
+.loading {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(at 107% 30%, #3d4650 75px, #4a3d50 -4%, #1c1a2e 38%);
+    z-index: 100000000;
+    transition: 1s ease;
+}
+
+.loading svg {
+    width: 5rem;
+    margin-bottom: 2rem;
+    overflow: visible;
+    transition: 0.3s ease;
+}
+
+.loading img {
+    top: 10vh;
+    position: absolute;
+    overflow: hidden;
+}
+
+.loading_img{
+    position: absolute;
+    left: 80vh;
+    overflow: hidden;
+    animation: spin 10s linear infinite;
+}
+
+.loading_character_img{
+    position: absolute;
+    top: 50vh;
+    left: 20vh;
+    overflow: hidden; /* 确保圆角效果不会显示出现在应该被裁切掉的部分 */
+    border-radius: 5%;
+    width: 461px; 
+    height: 673px;
+    box-shadow: 0 8px 16px black;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: #171717;
+    font-weight: 900;
+    transition: 0.3s ease;
+}
+
+.loading_out {
+    transform: translateY(100%);
+}
+
+.loading_out svg,
+.loading_out p {
+    opacity: 0;
+}
