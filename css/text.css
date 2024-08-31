@@ -63,7 +63,7 @@
         2px 2px 2px rgba(0, 0, 0, 0.5),
         3px 3px 3px rgba(0, 0, 0, 0.5);
     font-family: 'TextFont';
-    font-size: 5vh;
+    font-size: 2.2vw;
     white-space: nowrap;
 }
 
@@ -85,19 +85,6 @@
 
 .superscript_link_effect:hover {
     animation: highlight 0.5s ease forwards; /* 动画效果 */
-}
-
-.footing_effect {
-    color: white;
-    background: transparent;
-    text-shadow:
-        -1px -1px 1px rgba(0, 0, 0, 0.5),
-        1px 1px 1px rgba(0, 0, 0, 0.5),
-        2px 2px 2px rgba(0, 0, 0, 0.5),
-        3px 3px 3px rgba(0, 0, 0, 0.5);
-    font-family: 'TextFont';
-    font-size: 40px;
-    white-space: nowrap;
 }
 
 .yellow {
@@ -131,7 +118,7 @@
 
 @font-face {
     font-family: 'TextFont';
-    src: url('../other_dependency/SmileySans-Oblique-2.ttf');
+    src: url('../other_dependency/LXGWHeartSerifCHS-2.ttf');
     font-weight: normal;
     font-style: normal;
 }
