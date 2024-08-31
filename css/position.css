@@ -1,0 +1,39 @@
+.img_position {
+    position: absolute;
+    top: 10vh;
+    left: 80vh;
+    z-index: 0;
+}
+
+.subhead_position {
+    position: relative;
+    top: 30vh;
+    left: 20vh;
+    z-index: 2;
+}
+
+.spreadhead_position {
+    position: absolute; 
+    left: 10vh;
+    z-index: 1;
+}
+
+.text_position {
+    position: relative;
+    top: 30vh;
+    left: 20vh;
+    z-index: 1;
+}
+
+.footing_position {
+    position: absolute;
+    left: 170vh;
+    top: 80vh;
+    z-index: 2;
+}
+
+.loading_character_img_position{
+    position: absolute;
+    top: 20vh;
+    left: 20vh;
+}
