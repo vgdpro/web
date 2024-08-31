@@ -72,6 +72,16 @@
     animation: highlight 0.5s ease forwards; /* 动画效果 */
 }
 
+.superscript_link_effect {
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.superscript_link_effect:hover {
+    animation: highlight 0.5s ease forwards; /* 动画效果 */
+}
+
 .footing_effect {
     color: white;
     background: transparent;
@@ -91,7 +101,6 @@ hr {
 
 .yellow {
     color: yellow;
-    text-decoration: underline yellow 3px;
 }
 
 @keyframes highlight {
