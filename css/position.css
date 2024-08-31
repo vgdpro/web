@@ -20,7 +20,7 @@
 
 .text_position {
     position: relative;
-    top: 30vh;
+    top: 25vh;
     left: 20vh;
     z-index: 1;
 }

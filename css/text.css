@@ -85,6 +85,14 @@
     white-space: nowrap;
 }
 
+hr {
+    width: 80%;
+}
+
+.yellow {
+    color: yellow;
+}
+
 @keyframes highlight {
     0%, 100% {
       background-size: 0 0;
