@@ -91,6 +91,7 @@ hr {
 
 .yellow {
     color: yellow;
+    text-decoration: underline yellow 3px;
 }
 
 @keyframes highlight {
