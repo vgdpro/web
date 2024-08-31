@@ -22,11 +22,14 @@
         2px 2px 2px rgba(0, 0, 0, 0.5),
         3px 3px 3px rgba(0, 0, 0, 0.5);
     font-family: 'SpreadHeadFont';
-    font-size: 150px;
+    font-size: 20vh;
     padding: 5px; /* 内边距 */
     white-space: nowrap; /* 防止文本换行 */
 }
+
 .subhead_effect {
+    width: 50vw;
+    height: 50vh;
     color: white;
     background: transparent;
     text-shadow:
@@ -35,7 +38,7 @@
         2px 2px 2px rgba(0, 0, 0, 0.5),
         3px 3px 3px rgba(0, 0, 0, 0.5);
     font-family: 'SubHeadFont';
-    font-size: 50px;
+    font-size: 7vh;
     white-space: nowrap; /* 防止文本换行 */
 }
 
@@ -50,6 +53,8 @@
 }
 
 .text_effect {
+    width: 80vw;
+    height: 70vh;
     color: white;
     background: transparent;
     text-shadow:
@@ -58,7 +63,7 @@
         2px 2px 2px rgba(0, 0, 0, 0.5),
         3px 3px 3px rgba(0, 0, 0, 0.5);
     font-family: 'TextFont';
-    font-size: 40px;
+    font-size: 5vh;
     white-space: nowrap;
 }
 
@@ -93,10 +98,6 @@
     font-family: 'TextFont';
     font-size: 40px;
     white-space: nowrap;
-}
-
-hr {
-    width: 80%;
 }
 
 .yellow {
