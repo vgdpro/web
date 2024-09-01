@@ -1,0 +1,52 @@
+select {
+    font-family: 'TextFont';
+    background: #1c1a2e;
+    color: white;
+    font-size: 1.5vw;
+    opacity: 0.8;
+}
+
+select option {
+    color: white;
+}
+
+textarea {
+    font-family: 'TextFont';
+    background: #1c1a2e;
+    color: white;
+    font-size: 1.5vw;
+    resize: none;
+}
+
+input[type="file"][multiple] {
+    font-family: 'TextFont';
+    background: #1c1a2e;
+    font-size: 1.5vw;
+    width: 15vw;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+#selected-files {
+    font-family: 'TextFont';
+    font-size: 1vw;
+    color: yellow;
+    width: 40vw;
+    overflow: hidden;
+}
+
+input[type="submit"] {
+    font-family: 'TextFont';
+    color: white;
+    background: #1c1a2e;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+input[type="reset"] {
+    font-family: 'TextFont';
+    color: white;
+    background: #1c1a2e;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
