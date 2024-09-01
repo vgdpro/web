@@ -49,13 +49,11 @@ form.addEventListener('submit', function (e) {
     })
     .then(data => {
         // 在这里处理成功的响应数据
-        console.log('Success:', data);
-        alert('提交失败成功');
+        alert('提交成功');
         form.reset();
     })
     .catch((error) => {
         // 在这里处理错误情况
-        console.error('Error:', error);
         alert('提交失败');
     });
 });
