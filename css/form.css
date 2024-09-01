@@ -1,6 +1,6 @@
 select {
     font-family: 'TextFont';
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 1.5vw;
     opacity: 0.8;
@@ -13,7 +13,7 @@ select option {
 
 textarea {
     font-family: 'TextFont';
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     font-weight: bold;
     font-size: 1.5vw;
@@ -22,7 +22,7 @@ textarea {
 
 input[type="file"][multiple] {
     font-family: 'TextFont';
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
     font-size: 1.5vw;
     width: 15vw;
     cursor: pointer;
@@ -40,7 +40,7 @@ input[type="file"][multiple] {
 input[type="submit"] {
     font-family: 'TextFont';
     color: white;
-    background: #1c1a2e;
+    background: rgba(0, 0, 0, 0.5);
     font-size: 1.5vw;
     cursor: pointer;
 }
@@ -48,7 +48,7 @@ input[type="submit"] {
 input[type="reset"] {
     font-family: 'TextFont';
     color: white;
-    background: #1c1a2e;
+    background: rgba(0, 0, 0, 0.5);
     font-size: 1.5vw;
     cursor: pointer;
 }

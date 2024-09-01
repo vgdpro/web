@@ -76,13 +76,15 @@
     animation: highlight 0.5s ease forwards; /* 动画效果 */
 }
 
-.superscript_link_effect {
+.button_effect {
     font-size: 1.5vw;
-    text-decoration: none;
+    color: white;
+    font-family: 'TextFont';
+    background: rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
 
-.superscript_link_effect:hover {
+.button_effect:hover {
     animation: highlight 0.5s ease forwards; /* 动画效果 */
 }
 
