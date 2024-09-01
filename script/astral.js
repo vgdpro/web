@@ -10,8 +10,8 @@ setInterval(()=>{
     body.appendChild(meteor)
     setTimeout(()=>{
         meteor.remove()
-    },400)
-},400)
+    },800)
+},1000)
 setInterval(()=>{
     let star=''
     //一次生成10颗星星
@@ -27,8 +27,8 @@ setInterval(()=>{
     }  
     setTimeout(()=>{
         star.remove()
-    },400)
-},400)
+    },1000)
+},1200)
 
 function GetBody(){
     return body

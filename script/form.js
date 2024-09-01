@@ -30,3 +30,32 @@ document.getElementById('file-input').addEventListener('change', function(event)
         fileListElement.appendChild(textNode);
     }
 });
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // 防止默认的表单提交行为
+    const formData = new FormData(form);
+
+    fetch(' '/*这里还没填*/, {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // 在这里处理成功的响应数据
+        console.log('Success:', data);
+        alert('提交失败成功');
+        form.reset();
+    })
+    .catch((error) => {
+        // 在这里处理错误情况
+        console.error('Error:', error);
+        alert('提交失败');
+    });
+});
