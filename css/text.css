@@ -47,7 +47,7 @@
     cursor: pointer;
 }
 
-.head_hover_effect:hover {
+.head_hover_effect:hover, .text_link_effect:hover {
     text-decoration: underline white 3px;
     animation: highlight 0.5s ease forwards; /* 动画效果 */
 }
@@ -72,36 +72,29 @@
     cursor: pointer;
 }
 
-.text_link_effect:hover {
+.button_effect_small, .button_effect_middle, .button_effect_large {
+    color: white;
+    font-family: 'TextFont';
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.button_effect_small:hover, .button_effect_middle:hover, .button_effect_large:hover {
     animation: highlight 0.5s ease forwards; /* 动画效果 */
 }
 
 .button_effect_small {
     font-size: 1.5vw;
-    color: white;
-    font-family: 'TextFont';
-    background: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
 }
-
-.button_effect_small:hover {
-    animation: highlight 0.5s ease forwards; /* 动画效果 */
+.button_effect_middle {
+    font-size: 1.8vw;
+}
+.button_effect_large {
+    font-size: 2.5vw;
 }
 
 .yellow {
     color: yellow;
-}
-
-.button_effect_middle {
-    font-size: 2.5vw;
-    color: white;
-    font-family: 'TextFont';
-    background: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
-.button_effect_middle:hover {
-    animation: highlight 0.5s ease forwards; /* 动画效果 */
 }
 
 @keyframes highlight {
