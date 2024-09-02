@@ -7,17 +7,32 @@
     <link rel="stylesheet" type="text/css" href="./css/position.css">
     <link rel="stylesheet" type="text/css" href="./css/astral.css">
     <link rel="stylesheet" type="text/css" href="./css/loading.css">
+    <link rel="stylesheet" type="text/css" href="./css/download.css">
 </head>
 <body>
     <div class="spreadhead_position"><h1 class="spreadhead_effect">VG-Project</h1></div>
     <div class="img_position"><img src="./images/image_1.png" class="img_effect"></div>
     <div class="text_position">
         <div class="text_effect">
+            <div>
+                &nbsp;&nbsp;&nbsp;<button class="button_effect_middle" onclick="on_click_download()">下载VGPro</button>
+                <!--
+                &nbsp;&nbsp;&nbsp;<button class="button_effect_middle" onclick="on_click_download()">下载VGPro2</button>
+                &nbsp;&nbsp;&nbsp;<button class="button_effect_middle" onclick="on_click_download()">下载VGMoblie</button>
+                -->
+                <br>
+                <br>
+                <br>
+                第三方链接下载:
+                <br>
+                &nbsp;&nbsp;&nbsp;<button class="button_effect_middle" onclick="on_click_new_window(event,' ')">网盘1</button>
+                <br>
+                &nbsp;&nbsp;&nbsp;<button class="button_effect_middle" onclick="on_click_new_window(event,' ')">网盘2</button>
+                <br>
+                &nbsp;&nbsp;&nbsp;<button class="button_effect_middle" onclick="on_click_new_window(event,' ')">网盘3</button>
+            </div>
+
             <div class="footing_position">
-                <!--<a onclick="loading.in('./main.html')" class="head_hover_effect">-->
-                <a class="head_hover_effect">
-                    <span class="text_link_effect">其他客户端介绍（暂无）</span>
-                </a>
                 <br>
                 <a onclick="loading.in('./main.html')" class="head_hover_effect">
                     <span class="text_link_effect">返回标题页</span>
@@ -31,5 +46,6 @@
     </div>
     <script src="./script/astral.js"></script>
     <script src="./script/loading.js"></script>
+    <script src="./script/onclick.js"></script>
 </body>
 </html>

@@ -20,3 +20,36 @@ function on_click_copy(text) {
         console.log('Copy functionality is not supported in this browser.');
     }
 }
+
+async function on_click_download() {
+    try {
+        const response = await fetch('http://localhost:3000/download-file');//这里需要和后端对接
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+        // 获取文件名（如果服务器响应头中包含了Content-Disposition）
+        const disposition = response.headers.get('Content-Disposition');
+        const filename = disposition && disposition.split('filename=')[1];
+
+        // 创建一个Blob URL并将其赋值给download URL
+        const blobUrl = await response.blob();
+        const downloadUrl = URL.createObjectURL(blobUrl);
+
+        // 创建一个临时链接元素，设置href为Blob URL，点击触发下载
+        const a = document.createElement('a');
+        a.href = downloadUrl;
+        a.style.display = 'none';
+        if (filename) {
+            a.download = filename; // 设置文件名（如果需要的话）
+        }
+        document.body.appendChild(a);
+        a.click();
+
+        // 清理
+        setTimeout(() => {
+            a.remove();
+            URL.revokeObjectURL(downloadUrl);
+        }, 0);
+    } catch (error) {
+        console.error('Error during download:', error);
+    }
+}
