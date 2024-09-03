@@ -38,6 +38,7 @@
 }
 
 .head_hover_effect {
+    white-space: nowrap;
     text-decoration: none;
     cursor: pointer;
 }
