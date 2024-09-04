@@ -1,6 +1,6 @@
 .img_effect {
-    overflow: hidden;
     animation: spin 30s linear infinite;
+    z-index: 1;
 }
 
 @keyframes spin {
@@ -8,25 +8,8 @@
     100% { transform: rotate(360deg); }
 }
 
-.spreadhead_effect {
+.head_effect {
     color: white;
-    background: transparent;
-    text-shadow:
-        -1px -1px 1px rgba(0, 0, 0, 0.5),
-        1px 1px 1px rgba(0, 0, 0, 0.5),
-        2px 2px 2px rgba(0, 0, 0, 0.5),
-        3px 3px 3px rgba(0, 0, 0, 0.5);
-    font-family: 'SpreadHeadFont';
-    font-size: 20vh;
-    padding: 5px; /* 内边距 */
-    white-space: nowrap; /* 防止文本换行 */
-}
-
-.subhead_effect {
-    width: 50vw;
-    height: 50vh;
-    color: white;
-    background: transparent;
     text-shadow:
         -1px -1px 1px rgba(0, 0, 0, 0.5),
         1px 1px 1px rgba(0, 0, 0, 0.5),
@@ -49,8 +32,17 @@
 }
 
 .text_effect {
-    width: 80vw;
-    height: 70vh;
+    color: white;
+    text-shadow:
+        -1px -1px 1px rgba(0, 0, 0, 0.5),
+        1px 1px 1px rgba(0, 0, 0, 0.5),
+        2px 2px 2px rgba(0, 0, 0, 0.5),
+        3px 3px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'TextFont';/*'黑体';*/
+    font-size: 2.2vw;
+}
+
+.text_effect h6, .head_effect h6 {
     color: white;
     background: transparent;
     text-shadow:
@@ -58,8 +50,17 @@
         1px 1px 1px rgba(0, 0, 0, 0.5),
         2px 2px 2px rgba(0, 0, 0, 0.5),
         3px 3px 3px rgba(0, 0, 0, 0.5);
-    font-family: 'TextFont';
-    font-size: 2.2vw;
+    font-family: 'SpreadHeadFont';
+    font-size: 20vh;
+    padding: 5px; /* 内边距 */
+    white-space: nowrap; /* 防止文本换行 */
+    z-index: 2;
+}
+
+.text_effect p {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.5), 0 0 40px 6px rgba(0, 0, 0, 0.1);
 }
 
 .text_link_effect {
@@ -93,16 +94,20 @@
     color: yellow;
 }
 
+.left_top{
+    vertical-align: top;
+}
+
 @keyframes highlight {
     0%, 100% {
-      background-size: 0 0;
-      opacity: 0.5;
+        background-size: 0 0;
+        opacity: 0.5;
     }
     50% {
-      background-size: 200% 200%;
-      opacity: 1;
+        background-size: 200% 200%;
+        opacity: 1;
     }
-  }
+}
 
 @font-face {
     font-family: 'SpreadHeadFont';
@@ -123,4 +128,26 @@
     src: url('../other_dependency/LXGWHeartSerifCHS-2.ttf');
     font-weight: normal;
     font-style: normal;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0px; /* 预定义的图片容器高度 */
+}
+
+.bottom-image-container img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+.table_loading {
+    color: rgba(255, 0, 0, 0.5);
 }

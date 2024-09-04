@@ -13,8 +13,9 @@ body {
 
 /* 流星样式 */
 .meteor {
+    overflow: hidden;
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     /* 渐变 */
     background: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0));
     height: 2px;
@@ -29,6 +30,7 @@ body {
 
 /* 星星样式 */
 .star {
+    overflow: hidden;
     position: absolute;
     z-index: 0;
     width: 10px;

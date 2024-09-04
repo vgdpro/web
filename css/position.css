@@ -26,9 +26,11 @@
 }
 
 .footing_position {
-    position: absolute;
-    top: 60vh;
-    left: 65vw;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    text-align: right;
     z-index: 2;
 }
 

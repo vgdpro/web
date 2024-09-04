@@ -9,6 +9,48 @@
     <link rel="stylesheet" type="text/css" href="./css/loading.css">
 </head>
 <body>
+    <div>
+        <table border="0" class="text_effect" id="changed_table">
+            <tr>
+                <td style="width: 5vw;">&ensp;</td>
+                <td  colspan="2"><h6>VG-Project</h6></td>
+                <td style="width: 10vw;">&ensp;</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="width: 316px; height: 316px;">
+                    <p>
+                        <img src="./images/author_jwyxym.png" alt=" " style="width: 316px; height: 316px;">
+                    </p>
+                </td>
+                <td class="left_top">
+                    <p>
+                        <span>VGPro项目成员:</span>
+                        <span class="yellow">今晚有宵夜吗</span>
+                        <button class="button_effect_middle" onclick="on_click_new_window(event,'https://b23.tv/QvjnKQs')">点击前往B站主页</button>
+                        <br>
+                        <span>主要负责内容：</span>
+                        <br>
+                        &nbsp;&nbsp;<span>VGPro项目总规划</span>
+                        <br>
+                        &nbsp;&nbsp;<span>VGPro卡片脚本</span>
+                        <br>
+                        &nbsp;&nbsp;<span>VGPro卡片数据库</span>
+                        <br>
+                        &nbsp;&nbsp;<span>VGPro官网前端</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="footing_position">
+        <button class="button_effect_small" onclick="last_page()">上一页</button>
+        <br>
+        <button class="button_effect_small" onclick="next_page()">下一页</button>
+        <br>
+        <button class="button_effect_small" onclick="loading.in('./main.html')">返回标题页</button>
+    </div>
+    <!--
     <h1 class="spreadhead_effect spreadhead_position">VG-Project</h1>
     <img src="./images/image_1.png" class="img_effect img_position">
     <div class="text_position text_effect">
@@ -46,11 +88,7 @@
             <br>
             感谢萌卡提供的技术指导与设备支持
         </div>
-        <div class="footing_position">
-            <br>
-            <a onclick="loading.in('./main.html')" class="head_hover_effect text_link_effect">返回标题页</a>
-        </div>
-    </div>
+    </div>-->
     <div class="loading">
         <img src="./images/image_2.png" class="loading_character_img loading_character_img_position">
         <img src="./images/image_1.png" class="loading_img img_position">
