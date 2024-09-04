@@ -30,16 +30,40 @@ document.getElementById('file-input').addEventListener('change', function(event)
         fileListElement.appendChild(textNode);
     }
 });
-
+function getOption(id){
+    var obj=document.getElementById(id)
+    var index = obj.selectedIndex
+    return obj.options[index].text
+}
+function sleep(ms){ // 这函数是为了等待文件读完，改成同步读取后可删除
+    return new Promise(resolve=>setTimeout(resolve, ms))
+}
 const form = document.querySelector('form');
-
-form.addEventListener('submit', function (e) {
+const url = "http://localhost:2047/"
+form.addEventListener('submit',async function (e) {
     e.preventDefault(); // 防止默认的表单提交行为
-    const formData = new FormData(form);
-
-    fetch(' '/*这里还没填*/, {
+    var data = {}
+    data.game_select=getOption("game_select")
+    data.bug_select=getOption("bug_select")
+    data.server_select=getOption("server_select")
+    data.expect_resolve=document.querySelector('#expect_resolve').value
+    data.resolve=document.querySelector('#resolve').value
+    data.file = new Array()
+    const files = document.querySelector('input[type="file"]').files;
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i]
+        const reader = new FileReader(e)
+        reader.onload = (e)=>{
+            const fileContent = e.target.result
+            data.file.push(file.name + '\\n' + fileContent)
+            console.log(file.name + '\\n' + fileContent)
+        }
+        reader.readAsText(file)
+    }
+    await sleep(1000) // 这行语句是为了等待文件读完，改成同步读取后可删除
+    fetch(url, {
         method: 'POST',
-        body: formData,
+        body: JSON.stringify(data),
     })
     .then(response => {
         if (!response.ok) {
@@ -49,13 +73,15 @@ form.addEventListener('submit', function (e) {
     })
     .then(data => {
         // 在这里处理成功的响应数据
-        console.error('Success:', data);
+        console.log('Success:', data);
         alert('提交成功');
         form.reset();
+        const fileListElement = document.getElementById('selected-files');
+        fileListElement.innerHTML = ''
     })
     .catch((error) => {
         // 在这里处理错误情况
-        console.error('Error:', error);
+        console.log(error);
         alert('提交失败');
     });
 });
