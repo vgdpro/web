@@ -10,49 +10,87 @@
     <link rel="stylesheet" type="text/css" href="./css/form.css">
 </head>
 <body>
-    <h1 class="spreadhead_effect spreadhead_position">VG-Project</h1>
-    <img src="./images/image_1.png" class="img_effect img_position">
-    <div class="text_position text_effect">
+    <div class="container">
         <form>
-            <span>使用的客户端：</span>
-            <select id="game_select" name="game_select">
-                <option value="none">&nbsp;&nbsp;</option>
-                <option value="VgPro">VgPro</option>
-                <!--<option value="VgPro2">VgPro2</option>
-                <option value="VgMobile">VgMobile</option-->
-            </select>
-            <span>bug类型：</span>
-            <select id="bug_select" name="bug_select">
-                <option value="none">&nbsp;&nbsp;</option>
-                <option value="lua_bug">卡片lua脚本bug</option>
-                <option value="software_bug">客户端bug</option>
-            </select>
-            <br>
-            <span>使用的服务器：</span>
-            <select id="server_select" name="server_select">
-                <option value="none">&nbsp;&nbsp;</option>
-                <option value="VgPro">官方线上服务器s1.vgpro.top:19132</option>
-                <!--<option value="VgPro2">本地单人模式</option>
-                <option value="VgMobile">其他服务器</option-->
-                <option value="other">非对局bug</option>
-            </select>
-            <br>
-            <span>预期的处理：</span>
-            <textarea rows="5" cols="50" name="textarea"></textarea>
-            <br>
-            <span>游戏内的处理：</span>
-            <textarea rows="5" cols="50" name="textarea"></textarea>
-            <br>
-            <span>附加文件（录像/截图/游戏回放）：</span>
-            <input type="file" multiple id="file-input" name="file">
-            &nbsp;&nbsp;&nbsp;
-            <input type="submit">
-            <input type="reset">
-            <div id="selected-files"></div>
+            <table border="0" class="text_effect table-wrapper">
+                <tr>
+                    <td style="width: 5vw;">&ensp;</td>
+                    <td colspan="3"><h6>VG-Project</h6></td>
+                    <td style="width: 10vw;">&ensp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="width: 5vw;"></td>
+                    <td>
+                        <span>使用的客户端：</span>
+                        <select id="game_select" name="game_select">
+                            <option value="1">VgPro</option>
+                            <option value="2">VgPro2</option>
+                            <option value="3">VgMobile</optio>
+                        </select>
+                    </td>
+                    <td style="width: 40vw;">&ensp;</td>
+                    <td style="width: 10vw;">&ensp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span>bug类型：</span>
+                        <select id="bug_select" name="bug_select" onchange="select_change()">
+                            <option value="1">客户端bug</option>
+                            <option value="2">卡片lua脚本bug</option>
+                        </select>
+                    </td>
+                    <td id="changed_select" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span>预期的处理：</span>
+                    </td>
+                    <td>
+                        <span>游戏内的处理：</span>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <textarea id="resolve" rows="5" cols="50" name="textarea"></textarea>
+                    </td>
+                    <td>
+                        <textarea id="resolve" rows="5" cols="50" name="textarea"></textarea>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span>附加文件（录像/截图/游戏回放）：</span>
+                        <input type="file" multiple id="file-input" name="file">
+                    </td>
+                    <td style="text-align: right;">
+                        <input type="submit">
+                        <input type="reset" onclick="clear_form()">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><div id="selected-files"></div></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
         </form>
     </div>
+    <div class="center_img_position"><img src="./images/image_5.png" class="background_img_effect"></div>
     <div class="footing_position">
-        <br>
         <button class="button_effect_small" onclick="loading.in('./main.html')">返回标题页</button>
     </div>
     <div class="loading">

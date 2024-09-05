@@ -10,27 +10,80 @@
     <link rel="stylesheet" type="text/css" href="./css/download.css">
 </head>
 <body>
-    <h1 class="spreadhead_effect spreadhead_position">VG-Project</h1>
-    <img src="./images/image_1.png" class="img_effect img_position">
-    <div class="text_position text_effect">
-        <div>
-            &nbsp;&nbsp;&nbsp;<button class="button_effect_large" onclick="on_click_download()">下载VGPro</button>
-            <!--
-            &nbsp;&nbsp;&nbsp;<button class="button_effect_large" onclick="on_click_download()">下载VGPro2</button>
-            &nbsp;&nbsp;&nbsp;<button class="button_effect_large" onclick="on_click_download()">下载VGMoblie</button>
-            -->
-            <br>
-            <br>
-            <br>
-            第三方链接下载:
-            <br>
-            &nbsp;&nbsp;&nbsp;<button class="button_effect_large" onclick="on_click_new_window(event,' ')">网盘1</button>
-            <br>
-            &nbsp;&nbsp;&nbsp;<button class="button_effect_large" onclick="on_click_new_window(event,' ')">网盘2</button>
-            <br>
-            &nbsp;&nbsp;&nbsp;<button class="button_effect_large" onclick="on_click_new_window(event,' ')">网盘3</button>
-        </div>
+    <div class="container">
+        <table border="0" class="text_effect table-wrapper">
+            <tr>
+                <td style="width: 5vw;">&ensp;</td>
+                <td colspan="3"><h6>VG-Project</h6></td>
+                <td style="width: 10vw;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="width: 5vw;"></td>
+                <td style="text-align: center;" colspan="2">
+                    <table border="0" table-layout="fixed" class="p">
+                        <tr>
+                            <td colspan="5" style="text-align: center;">直链下载</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <img src="./images/image_3.png" onclick="on_click_download()" class="img_link">
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>VGPro</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 10vw;">&ensp;</td>
+            </tr>
+            <tr>
+                <td>&ensp;</td>
+                <td></td>
+                <td></td>
+                <td style="width: 40vw;"></td>
+                <td style="width: 10vw;"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style="text-align: center;" colspan="2">
+                    <table border="0" table-layout="fixed" class="p">
+                        <tr>
+                            <td colspan="5" style="text-align: center;">外链下载</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td>
+                                <!--img src="./images/image_3.png" onclick="on_click_new_window(event,'')" class="img_link"-->
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
     </div>
+    <div class="center_img_position"><img src="./images/image_5.png" class="background_img_effect"></div>
     <div class="footing_position">
         <br>
         <button class="button_effect_small" onclick="loading.in('./main.html')">返回标题页</button>

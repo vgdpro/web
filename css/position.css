@@ -39,3 +39,36 @@
     top: 20vh;
     left: 10vw;
 }
+
+.center_position {
+    position: relative;
+    top: 50vh;
+    left: 50vw;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    height: auto; /* 或者一个固定的高度 */
+}
+
+.table-wrapper {
+    position: absolute;
+    top: 0; /* 假设你想要表格占据容器的全部垂直空间 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* 确保表格在顶层 */
+}
+
+.center_img_position {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;   /* 垂直居中 */
+    height: 100vh;         /* 例如，将容器设置为视口高度 */
+}
+
+.center_img_position img {
+    max-width: 100%; /* 确保图像不会超出其容器 */
+    height: auto;     /* 保持图像的原始宽高比 */
+}

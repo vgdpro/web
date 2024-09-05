@@ -1,6 +1,23 @@
 .img_effect {
     animation: spin 30s linear infinite;
+}
+
+.img_link {
+    cursor: pointer;
+    width: 15vh;
+    height: 15vh;
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
     z-index: 1;
+}
+
+.img_link:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(170, 208, 245, 0.5);
+}
+
+.background_img_effect {
+    opacity: 0.2;
+    height: 80vw;
 }
 
 @keyframes spin {
@@ -40,6 +57,7 @@
         3px 3px 3px rgba(0, 0, 0, 0.5);
     font-family: 'TextFont';/*'黑体';*/
     font-size: 2.2vw;
+    z-index: 1;
 }
 
 .text_effect h6, .head_effect h6 {
@@ -57,7 +75,7 @@
     z-index: 2;
 }
 
-.text_effect p {
+.text_effect p , .p{
     background: rgba(255, 255, 255, 0.05);
     padding: 5px;
     box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.5), 0 0 40px 6px rgba(0, 0, 0, 0.1);
@@ -146,8 +164,4 @@ table {
     width: auto;
     height: auto;
     max-width: 100%;
-}
-
-.table_loading {
-    color: rgba(255, 0, 0, 0.5);
 }

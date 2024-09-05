@@ -1,3 +1,5 @@
+const YGO_VI_EX = 'https://ygobbs.com/t/%E8%80%81%E5%96%B5%E5%B8%88%E7%89%8Cygo-vi-ex%E4%B8%8B%E8%BD%BD%E5%99%A8%E5%8A%A0%E5%BC%BA%E7%89%8820%E6%95%99%E7%A8%8B%E5%B8%96%EF%BC%88%E5%97%AF/518077';
+
 function on_click_new_window(event,href) {
     event.preventDefault(); // 防止默认行为（即在同一标签页中打开链接）
     if (href != 0){ window.open(href, '_blank'); } // 在新窗口中打开链接
@@ -56,7 +58,7 @@ async function on_click_download() {
 
 let page = 0;
 
-let page_all = 5;
+let page_all = 6;
 
 const tableElement = document.getElementById('changed_table');
 
@@ -85,7 +87,7 @@ const data = [
     ['VGPro项目成员:'
         , 'VI-1911'
         , '主要提供各方面技术支持'
-        , ' '
+        , '友情链接：'
         , ' '
         , ' '
         , ' '],
@@ -113,6 +115,12 @@ const data = [
         , ' '
         , ' '
         , ' '],
+    ['感谢萌卡对VGPro项目的设备支持'
+        , '友情链接：'
+        , ' '
+        , ' '
+        , ' '
+        , ' '],
 ];
 
 const img_url = [
@@ -122,6 +130,7 @@ const img_url = [
     , './images/author_VI1911.png'
     , './images/image_3.png'
     , './images/image_3.png'
+    , './images/image_4.png'
 ]
 
 function update_table_column() {
@@ -133,7 +142,7 @@ function update_table_column() {
     img.src = img_url[page];
     const p = columns[2].querySelector('p');
     p.innerHTML = '';
-    if (page < 4){
+    if (page < 3){
         for (let i = 0; i < data[page].length; i++) {
             if (i >= 3){
                 p.innerHTML += '&nbsp;';
@@ -151,17 +160,63 @@ function update_table_column() {
                     button.textContent = '点击前往B站主页';
                     p.appendChild(button);
                 }
-                else if (page == 3){
-                    let button = document.createElement('button');
-                    button.className = 'button_effect_middle';
-                    button.id = 'click_button';
-                    button.textContent = '点击前往VI-1911的博客';
-                    p.appendChild(button);
-                }
             }
             if (i != 0){
                 let br = document.createElement('br');
                 p.appendChild(br);
+            }
+        }
+    }
+    else if (page == 3){
+        for (let i = 0; i < data[page].length; i++) {
+            let span = document.createElement('span');
+            span.textContent = data[page][i];
+            p.appendChild(span);
+            if (i == 1){
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button';
+                button.textContent = '点击前往VI-1911的博客';
+                p.appendChild(button);
+            }
+            else if (i == 4){
+                p.innerHTML += '&nbsp;';
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button_II';
+                button.textContent = 'YGO-VI-EX（喵端）下载';
+                p.appendChild(button);
+            }
+            if (i != 0){
+                let br = document.createElement('br');
+                p.appendChild(br);
+            }
+        }
+    }
+    else if (page == 6){
+        for (let i = 0; i < data[page].length; i++) {
+            let span = document.createElement('span');
+            span.textContent = data[page][i];
+            p.appendChild(span);
+            let br = document.createElement('br');
+            p.appendChild(br);
+            if (i == 1){
+                p.innerHTML += '&nbsp;';
+                p.innerHTML += '&nbsp;';
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button';
+                button.textContent = '点击前往萌卡官网';
+                p.appendChild(button);
+            }
+            else if (i == 2){
+                p.innerHTML += '&nbsp;';
+                p.innerHTML += '&nbsp;';
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button_II';
+                button.textContent = '点击前往KoishiPro官网';
+                p.appendChild(button);
             }
         }
     }
@@ -215,19 +270,33 @@ function add_listen(){
     if (page == 0){
         var button = document.getElementById('click_button');
         button.addEventListener('click', function(event) {
-            on_click_new_window(event,'https://b23.tv/QvjnKQs');
+            on_click_new_window(event, 'https://b23.tv/QvjnKQs');
         });
     }
     else if (page == 1){
         var button = document.getElementById('click_button');
         button.addEventListener('click', function(event) {
-            on_click_new_window(event,'https://b23.tv/cba0qNf');
+            on_click_new_window(event, 'https://b23.tv/cba0qNf');
         });
     }
     else if (page == 3){
         var button = document.getElementById('click_button');
         button.addEventListener('click', function(event) {
-            on_click_new_window(event,'https://violentiris.github.io/');
+            on_click_new_window(event, 'https://violentiris.github.io/');
+        });
+        var button = document.getElementById('click_button_II');
+        button.addEventListener('click', function(event) {
+            on_click_new_window(event, YGO_VI_EX);
+        });
+    }
+    else if (page == 6){
+        var button = document.getElementById('click_button');
+        button.addEventListener('click', function(event) {
+            on_click_new_window(event,'https://mycard.moe/');
+        });
+        var button = document.getElementById('click_button_II');
+        button.addEventListener('click', function(event) {
+            on_click_new_window(event,'https://koishi.pro/');
         });
     }
 }
