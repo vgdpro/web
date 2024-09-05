@@ -300,3 +300,36 @@ function add_listen(){
         });
     }
 }
+
+let download_select = 1;
+function download_select_change(){
+    var selectedValue = document.getElementById('download_select').value;
+    download_select = selectedValue;
+}
+
+var link_I = document.getElementById('link_I');
+var link_II = document.getElementById('link_II');
+var link_III = document.getElementById('link_III');
+var link_IV = document.getElementById('link_IV');
+
+link_I.addEventListener('click', function(event) {
+    if (download_select == 1){
+    }
+    else{
+    }
+});
+
+link_II.addEventListener('click', function(event) {
+    if (download_select == 1){
+    }
+});
+
+link_III.addEventListener('click', function(event) {
+    if (download_select == 1){
+    }
+});
+
+link_IV.addEventListener('click', function(event) {
+    if (download_select == 1){
+    }
+});

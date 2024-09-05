@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./css/astral.css">
     <link rel="stylesheet" type="text/css" href="./css/loading.css">
     <link rel="stylesheet" type="text/css" href="./css/download.css">
+    <link rel="stylesheet" type="text/css" href="./css/form.css">
 </head>
 <body>
     <div class="container">
@@ -58,23 +59,35 @@
                 <td style="text-align: center;" colspan="2">
                     <table border="0" table-layout="fixed" class="p">
                         <tr>
-                            <td colspan="5" style="text-align: center;">外链下载</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td></td>
-                            <td>
-                                <!--img src="./images/image_3.png" onclick="on_click_new_window(event,'')" class="img_link"-->
+                            <td colspan="5" style="text-align: center;">
+                                外链下载:
+                                <select id="download_select" name="download_select" onchange="download_select_change()">
+                                    <option value="1">VGPro</option>
+                                    <option value="2">VGPro2</option>
+                                </select>
                             </td>
-                            <td></td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>
+                                <img src="./images/image_9.png" id="link_I" class="img_link">
+                            </td>
+                            <td>
+                                <img src="./images/image_6.png" id="link_II" class="img_link" style="border-radius: 50%;">
+                            </td>
+                            <td>
+                                <img src="./images/image_7.png" id="link_III" class="img_link" style="border-radius: 25%;">
+                            </td>
+                            <td>
+                                <img src="./images/image_8.png" id="link_IV" class="img_link" style="border-radius: 25%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>Gitee</td>
+                            <td>GitHub</td>
+                            <td>123云盘</td>
+                            <td>天翼云盘</td>
                         </tr>
                     </table>
                 </td>
