@@ -173,6 +173,7 @@ function update_table_column() {
             span.textContent = data[page][i];
             p.appendChild(span);
             if (i == 1){
+                span.className = 'yellow';
                 let button = document.createElement('button');
                 button.className = 'button_effect_middle';
                 button.id = 'click_button';
