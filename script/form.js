@@ -65,6 +65,7 @@ function select_change() {
 
 function getOption(id){
     var obj=document.getElementById(id)
+    if (!obj) { return 0; }
     var index = obj.selectedIndex
     return obj.options[index].text
 }
