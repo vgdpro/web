@@ -313,24 +313,120 @@ var link_II = document.getElementById('link_II');
 var link_III = document.getElementById('link_III');
 var link_IV = document.getElementById('link_IV');
 
-link_I.addEventListener('click', function(event) {
-    if (download_select == 1){
-    }
-    else{
-    }
-});
+if (link_I){
+    link_I.addEventListener('click', function(event) {
+        if (download_select == 1){
+        }
+        else{
+        }
+    });
+}
 
-link_II.addEventListener('click', function(event) {
-    if (download_select == 1){
-    }
-});
+if (link_II){
+    link_II.addEventListener('click', function(event) {
+        if (download_select == 1){
+        }
+    });
+}
 
-link_III.addEventListener('click', function(event) {
-    if (download_select == 1){
-    }
-});
+if (link_III){
+    link_III.addEventListener('click', function(event) {
+        if (download_select == 1){
+        }
+    });
+}
 
-link_IV.addEventListener('click', function(event) {
-    if (download_select == 1){
-    }
-});
+if (link_IV){
+    link_IV.addEventListener('click', function(event) {
+        if (download_select == 1){
+        }
+    });
+}
+
+function introdue_check_ways(){
+    var td = document.getElementById('check_ways');
+    td.innerHTML = '';
+    let p = document.createElement('p');
+    let span_I = document.createElement('span');
+    let span_II = document.createElement('span');
+    let span_III = document.createElement('span');
+    let span_IV = document.createElement('span');
+    let span_V = document.createElement('span');
+    let button_I = document.createElement('button');
+    let button_II = document.createElement('button');
+    let button_III = document.createElement('button');
+    span_I.textContent = '使用方法：在VGPro的联机模式中，在主机信息处分别输入';
+    span_II.textContent = 's1.vgpro.top';
+    span_III.textContent = '和';
+    span_IV.textContent = '19132';
+    span_II.className = 'yellow';
+    span_IV.className = 'yellow';
+    span_V.textContent = '，不输入主机密码，点击加入游戏，即可进入服务器随机对战。也可在主机密码处输入任意文字，点击加入游戏，以那个文字为房间名建立房间，让你的对手输入同样的文字，即可加入房间。';
+    button_I.className = 'button_effect_small';
+    button_II.className = 'button_effect_small';
+    button_III.className = 'button_effect_small';
+    button_I.id = 'check_ways_button_I';
+    button_II.id = 'check_ways_button_II';
+    button_III.id = 'check_ways_button_III';
+    button_I.textContent = '点击复制';
+    button_II.textContent = '点击复制';
+    button_III.textContent = '点击返回';
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
+    p.appendChild(span_I);
+    p.appendChild(span_II);
+    p.appendChild(button_I);
+    p.appendChild(span_III);
+    p.appendChild(span_IV);
+    p.appendChild(button_II);
+    p.appendChild(span_V);
+    p.appendChild(button_III);
+    td.appendChild(p);
+    button_I.addEventListener('click', function(event) {
+        on_click_copy('s1.vgpro.top');
+    });
+    button_II.addEventListener('click', function(event) {
+        on_click_copy('19132');
+    });
+    button_III.addEventListener('click', function(event) {
+        introdue_return();
+        introdue_add_listen();
+    });
+}
+
+function introdue_return(){
+    var td = document.getElementById('check_ways');
+    td.innerHTML = '';
+    let p = document.createElement('p');
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
+    let span_I = document.createElement('span');
+    span_I.textContent = 'VG-Project泛指以VGPro客户端为中心的一系列YGO改端项目。本项目的一切源码均在';
+    p.appendChild(span_I);
+    let a = document.createElement('a');
+    a.textContent = 'Github';
+    a.className = 'text_link_effect';
+    a.id = 'check_git_button';
+    p.appendChild(a);
+    let span_II = document.createElement('span');
+    span_II.textContent = '公开，并且对于游戏不作任何收费，你可以通过本网站提供的链接/官方Q群/萌卡下载游戏。在这里，你可以通过连接VGPro官方服务器与你的朋友或匹配到玩家进行对战';
+    p.appendChild(span_II);
+    let button = document.createElement('button');
+    button.textContent = '点击查看对战方法';
+    button.className = 'button_effect_small';
+    button.id = 'check_ways_button';
+    p.appendChild(button);
+    p.innerHTML += '。';
+    td.appendChild(p);
+}
+
+function introdue_add_listen(){
+    var check_ways_button = document.getElementById('check_ways_button');
+    var a = document.getElementById('check_git_button');
+    check_ways_button.addEventListener('click', function(event) {
+        introdue_check_ways();
+    });
+    a.addEventListener('click', function(event) {
+        on_click_new_window(event,'https://github.com/vgdpro');
+    });
+}

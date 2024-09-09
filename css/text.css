@@ -69,7 +69,7 @@
         2px 2px 2px rgba(0, 0, 0, 0.5),
         3px 3px 3px rgba(0, 0, 0, 0.5);
     font-family: 'SpreadHeadFont';
-    font-size: 20vh;
+    font-size: 10vw;
     padding: 5px; /* 内边距 */
     white-space: nowrap; /* 防止文本换行 */
     z-index: 2;
