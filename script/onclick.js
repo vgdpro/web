@@ -355,6 +355,7 @@ function introdue_check_ways(){
     let button_I = document.createElement('button');
     let button_II = document.createElement('button');
     let button_III = document.createElement('button');
+    let br = document.createElement('br');
     span_I.textContent = '使用方法：在VGPro的联机模式中，在主机信息处分别输入';
     span_II.textContent = 's1.vgpro.top';
     span_III.textContent = '和';
@@ -380,6 +381,9 @@ function introdue_check_ways(){
     p.appendChild(span_IV);
     p.appendChild(button_II);
     p.appendChild(span_V);
+    p.appendChild(br);
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
     p.appendChild(button_III);
     td.appendChild(p);
     button_I.addEventListener('click', function(event) {
@@ -418,15 +422,29 @@ function introdue_return(){
     p.appendChild(button);
     p.innerHTML += '。';
     td.appendChild(p);
+    let br = document.createElement('br');
+    p.appendChild(br);
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '官方Q群：';
+    let a_II = document.createElement('a');
+    a_II.textContent = '（暂未填写）';
+    a_II.className = 'text_link_effect';
+    a_II.id = 'check_qq_button';
+    p.appendChild(a_II);
 }
 
 function introdue_add_listen(){
     var check_ways_button = document.getElementById('check_ways_button');
     var a = document.getElementById('check_git_button');
+    var a_II = document.getElementById('check_qq_button');
     check_ways_button.addEventListener('click', function(event) {
         introdue_check_ways();
     });
     a.addEventListener('click', function(event) {
         on_click_new_window(event,'https://github.com/vgdpro');
+    });
+    a_II.addEventListener('click', function(event) {
+        on_click_new_window(event,'0');
     });
 }
