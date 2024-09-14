@@ -344,6 +344,10 @@ if (link_IV){
 }
 
 function introdue_check_ways(){
+    introdue_check_ways_text();
+    introdue_add_listen_check_way();
+}
+function introdue_check_ways_text(){
     var td = document.getElementById('check_ways');
     td.innerHTML = '';
     let p = document.createElement('p');
@@ -356,6 +360,7 @@ function introdue_check_ways(){
     let button_II = document.createElement('button');
     let button_III = document.createElement('button');
     let br = document.createElement('br');
+    let br_II = document.createElement('br');
     span_I.textContent = '使用方法：在VGPro的联机模式中，在主机信息处分别输入';
     span_II.textContent = 's1.vgpro.top';
     span_III.textContent = '和';
@@ -366,9 +371,9 @@ function introdue_check_ways(){
     button_I.className = 'button_effect_small';
     button_II.className = 'button_effect_small';
     button_III.className = 'button_effect_small';
-    button_I.id = 'check_ways_button_I';
-    button_II.id = 'check_ways_button_II';
-    button_III.id = 'check_ways_button_III';
+    button_I.id = 'button_copy_ip'
+    button_II.id = 'button_copy_19132'
+    button_III.id = 'button_return'
     button_I.textContent = '点击复制';
     button_II.textContent = '点击复制';
     button_III.textContent = '点击返回';
@@ -382,10 +387,17 @@ function introdue_check_ways(){
     p.appendChild(button_II);
     p.appendChild(span_V);
     p.appendChild(br);
+    p.appendChild(br_II);
     p.innerHTML += '&nbsp;';
     p.innerHTML += '&nbsp;';
     p.appendChild(button_III);
     td.appendChild(p);
+}
+
+function introdue_add_listen_check_way(){
+    var button_I = document.getElementById('button_copy_ip');
+    var button_II = document.getElementById('button_copy_19132');
+    var button_III = document.getElementById('button_return');
     button_I.addEventListener('click', function(event) {
         on_click_copy('s1.vgpro.top');
     });
@@ -393,6 +405,56 @@ function introdue_check_ways(){
         on_click_copy('19132');
     });
     button_III.addEventListener('click', function(event) {
+        introdue_return();
+        introdue_add_listen();
+    });
+}
+
+function introdue_vgpro(){
+    introdue_vgpro_text();
+    introdue_add_listen_vgpro();
+}
+function introdue_vgpro_text(){
+    var td = document.getElementById('check_ways');
+    td.innerHTML = '';
+    let p = document.createElement('p');
+    let span_I = document.createElement('span');
+    let button_I = document.createElement('button');
+    let button_II = document.createElement('button');
+    let br_I = document.createElement('br');
+    let br_II = document.createElement('br');
+    let br_III = document.createElement('br');
+    let br_IV = document.createElement('br');
+    span_I.textContent = 'VGPro是一款基于YGOPro源码（C++语言）改的VG客户端，该客户端能适应绝大部分配置的Win系统电脑。';
+    button_I.className = 'button_effect_small';
+    button_II.className = 'button_effect_small';
+    button_I.textContent = '点击查看VGPro的GitHub仓库';
+    button_II.textContent = '点击返回';
+    button_I.id = 'button_to_git'
+    button_II.id = 'button_return'
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
+    p.appendChild(span_I);
+    p.appendChild(br_I);
+    p.appendChild(br_II);
+    p.appendChild(br_III);
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
+    p.appendChild(button_I);
+    p.appendChild(br_IV);
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
+    p.appendChild(button_II);
+    td.appendChild(p);
+}
+
+function introdue_add_listen_vgpro(){
+    var button_I = document.getElementById('button_to_git');
+    var button_II = document.getElementById('button_return');
+    button_I.addEventListener('click', function(event) {
+        on_click_new_window(event,'https://github.com/vgdpro/vgdpro.git');
+    });
+    button_II.addEventListener('click', function(event) {
         introdue_return();
         introdue_add_listen();
     });
@@ -426,18 +488,29 @@ function introdue_return(){
     p.appendChild(br);
     p.innerHTML += '&nbsp;';
     p.innerHTML += '&nbsp;';
-    p.innerHTML += '官方Q群：';
+    p.innerHTML += 'VGPro系列客户端列表：';
     let a_II = document.createElement('a');
-    a_II.textContent = '（暂未填写）';
+    a_II.textContent = 'VGPro';
     a_II.className = 'text_link_effect';
-    a_II.id = 'check_qq_button';
+    a_II.id = 'check_vgpro_button';
     p.appendChild(a_II);
+    let br_II = document.createElement('br');
+    p.appendChild(br_II);
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '&nbsp;';
+    p.innerHTML += '官方Q群：';
+    let a_III = document.createElement('a');
+    a_III.textContent = '（暂未填写）';
+    a_III.className = 'text_link_effect';
+    a_III.id = 'check_qq_button';
+    p.appendChild(a_III);
 }
 
 function introdue_add_listen(){
     var check_ways_button = document.getElementById('check_ways_button');
     var a = document.getElementById('check_git_button');
-    var a_II = document.getElementById('check_qq_button');
+    var a_II = document.getElementById('check_vgpro_button');
+    var a_III = document.getElementById('check_qq_button');
     check_ways_button.addEventListener('click', function(event) {
         introdue_check_ways();
     });
@@ -445,6 +518,9 @@ function introdue_add_listen(){
         on_click_new_window(event,'https://github.com/vgdpro');
     });
     a_II.addEventListener('click', function(event) {
+        introdue_vgpro();
+    });
+    a_III.addEventListener('click', function(event) {
         on_click_new_window(event,'0');
     });
 }
