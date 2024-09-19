@@ -58,7 +58,7 @@ async function on_click_download() {
 
 let page = 0;
 
-let page_all = 6;
+let page_last = 6;
 
 const tableElement = document.getElementById('changed_table');
 
@@ -134,8 +134,8 @@ const img_url = [
 ]
 
 function update_table_column() {
-    if (page < 0) { page = page_all; }
-    if (page > page_all) { page = 0; }
+    if (page < 0) { page = page_last; }
+    if (page > page_last) { page = 0; }
     const lines = tableElement.getElementsByTagName('tr');
     const columns = lines[1].getElementsByTagName('td');
     const img = columns[1].querySelector('img');
@@ -255,15 +255,140 @@ function update_table_column() {
     }
 }
 
+function update_table_column_II() {
+    let pag=page+1
+    if (pag < 0) { pag = page_last; }
+    if (pag > page_last) { pag = 0; }
+    const lines = tableElement.getElementsByTagName('tr');
+    const columns = lines[2].getElementsByTagName('td');
+    const img = columns[1].querySelector('img');
+    img.src = img_url[pag];
+    const p = columns[2].querySelector('p');
+    p.innerHTML = '';
+    if (pag < 3){
+        for (let i = 0; i < data[pag].length; i++) {
+            if (i >= 3){
+                p.innerHTML += '&nbsp;';
+                p.innerHTML += '&nbsp;';
+            }
+            let span = document.createElement('span');
+            span.textContent = data[pag][i];
+            p.appendChild(span);
+            if (i == 1){
+                span.className = 'yellow';
+                if (pag == 0 || pag == 1){
+                    let button = document.createElement('button');
+                    button.className = 'button_effect_middle';
+                    button.id = 'click_button_line_II';
+                    button.textContent = '点击前往B站主页';
+                    p.appendChild(button);
+                }
+            }
+            if (i != 0){
+                let br = document.createElement('br');
+                p.appendChild(br);
+            }
+        }
+    }
+    else if (pag == 3){
+        for (let i = 0; i < data[pag].length; i++) {
+            let span = document.createElement('span');
+            span.textContent = data[pag][i];
+            p.appendChild(span);
+            if (i == 1){
+                span.className = 'yellow';
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button_line_II';
+                button.textContent = '点击前往VI-1911的博客';
+                p.appendChild(button);
+            }
+            else if (i == 4){
+                p.innerHTML += '&nbsp;';
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button_line_II_II';
+                button.textContent = 'YGO-VI-EX（喵端）下载';
+                p.appendChild(button);
+            }
+            if (i != 0){
+                let br = document.createElement('br');
+                p.appendChild(br);
+            }
+        }
+    }
+    else if (pag == 6){
+        for (let i = 0; i < data[pag].length; i++) {
+            let span = document.createElement('span');
+            span.textContent = data[pag][i];
+            p.appendChild(span);
+            let br = document.createElement('br');
+            p.appendChild(br);
+            if (i == 1){
+                p.innerHTML += '&nbsp;';
+                p.innerHTML += '&nbsp;';
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button_line_II';
+                button.textContent = '点击前往萌卡官网';
+                p.appendChild(button);
+            }
+            else if (i == 2){
+                p.innerHTML += '&nbsp;';
+                p.innerHTML += '&nbsp;';
+                let button = document.createElement('button');
+                button.className = 'button_effect_middle';
+                button.id = 'click_button_line_II_II';
+                button.textContent = '点击前往KoishiPro官网';
+                p.appendChild(button);
+            }
+        }
+    }
+    else{
+        for (let i = 0; i < data[pag].length; i++) {
+            if (data[pag][i] != ' '){
+                if (i > 1 && i % 6 != 1){
+                    p.innerHTML += '&nbsp;';
+                    p.innerHTML += '&nbsp;';
+                }
+                let span = document.createElement('span');
+                span.textContent = data[pag][i];
+                p.appendChild(span);
+                if (i != 0){
+                    span.className = 'yellow';
+                    span.style.fontFamily = 'FangSong';
+                    if (i % 6 == 0){
+                        let br = document.createElement('br');
+                        p.appendChild(br);
+                    }
+                }
+                else{
+                    let br = document.createElement('br');
+                    p.appendChild(br);
+                }
+            }
+            else{
+                let span = document.createElement('span');
+                span.textContent = data[pag][i];
+                p.appendChild(span);
+                let br = document.createElement('br');
+                p.appendChild(br);
+            }
+        }
+    }
+}
+
 function next_page() {
     page++;
     update_table_column();
+    update_table_column_II();
     add_listen();
 }
 
 function last_page() {
     page--;
     update_table_column();
+    update_table_column_II();
     add_listen();
 }
 
@@ -292,11 +417,47 @@ function add_listen(){
     }
     else if (page == 6){
         var button = document.getElementById('click_button');
+
         button.addEventListener('click', function(event) {
             on_click_new_window(event,'https://mycard.moe/');
         });
-        var button = document.getElementById('click_button_II');
+        var button_II = document.getElementById('click_button_II');
+        button_II.addEventListener('click', function(event) {
+            on_click_new_window(event,'https://koishi.pro/');
+        });
+    }
+    let pag=page+1
+    if (pag < 0) { pag = page_last; }
+    if (pag > page_last) { pag = 0; }
+    if (pag == 0){
+        var button = document.getElementById('click_button_line_II');
         button.addEventListener('click', function(event) {
+            on_click_new_window(event, 'https://b23.tv/QvjnKQs');
+        });
+    }
+    else if (pag == 1){
+        var button = document.getElementById('click_button_line_II');
+        button.addEventListener('click', function(event) {
+            on_click_new_window(event, 'https://b23.tv/cba0qNf');
+        });
+    }
+    else if (pag == 3){
+        var button = document.getElementById('click_button_line_II');
+        button.addEventListener('click', function(event) {
+            on_click_new_window(event, 'https://violentiris.github.io/');
+        });
+        var button = document.getElementById('click_button_line_II_II');
+        button.addEventListener('click', function(event) {
+            on_click_new_window(event, YGO_VI_EX);
+        });
+    }
+    else if (pag == 6){
+        var button = document.getElementById('click_button_line_II');
+        button.addEventListener('click', function(event) {
+            on_click_new_window(event,'https://mycard.moe/');
+        });
+        var button_II = document.getElementById('click_button_line_II_II');
+        button_II.addEventListener('click', function(event) {
             on_click_new_window(event,'https://koishi.pro/');
         });
     }
