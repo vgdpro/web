@@ -419,7 +419,7 @@ function add_listen(){
         var button = document.getElementById('click_button');
 
         button.addEventListener('click', function(event) {
-            on_click_new_window(event,'https://mycard.moe/');
+            on_click_new_window(event,'https://mycard.world/');
         });
         var button_II = document.getElementById('click_button_II');
         button_II.addEventListener('click', function(event) {
@@ -454,7 +454,7 @@ function add_listen(){
     else if (pag == 6){
         var button = document.getElementById('click_button_line_II');
         button.addEventListener('click', function(event) {
-            on_click_new_window(event,'https://mycard.moe/');
+            on_click_new_window(event,'https://mycard.world/');
         });
         var button_II = document.getElementById('click_button_line_II_II');
         button_II.addEventListener('click', function(event) {
