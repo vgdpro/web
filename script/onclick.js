@@ -1,5 +1,7 @@
 const YGO_VI_EX = 'https://ygobbs.com/t/%E8%80%81%E5%96%B5%E5%B8%88%E7%89%8Cygo-vi-ex%E4%B8%8B%E8%BD%BD%E5%99%A8%E5%8A%A0%E5%BC%BA%E7%89%8820%E6%95%99%E7%A8%8B%E5%B8%96%EF%BC%88%E5%97%AF/518077';
 
+const QQ = 'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=bihcRD4yrzTfaiac9u8mhrmKFwgGIpB-&authKey=vSc0d%2FnDqMhPcgYOlR6BtjGxlFtQTm96zNs6EPpDBvdLn7fqciSfCVzKEXygaKkS&noverify=0&group_code=655640394'
+
 function on_click_new_window(event,href) {
     event.preventDefault(); // 防止默认行为（即在同一标签页中打开链接）
     if (href != 0){ window.open(href, '_blank'); } // 在新窗口中打开链接
@@ -661,7 +663,7 @@ function introdue_return(){
     p.innerHTML += '&nbsp;';
     p.innerHTML += '官方Q群：';
     let a_III = document.createElement('a');
-    a_III.textContent = '（暂未填写）';
+    a_III.textContent = '655640394';
     a_III.className = 'text_link_effect';
     a_III.id = 'check_qq_button';
     p.appendChild(a_III);
@@ -682,6 +684,6 @@ function introdue_add_listen(){
         introdue_vgpro();
     });
     a_III.addEventListener('click', function(event) {
-        on_click_new_window(event,'0');
+        on_click_new_window(event, QQ);
     });
 }
